@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#e4f0f3">
+<title>2026 신내동성당 성탄제</title>
+<meta name="description" content="2026 신내동성당 중고등부 주일학교 성탄제 · 신(내)의 한수 : 감정 투자 대작전">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&family=Gowun+Dodum&family=Gaegu:wght@700&display=swap">
+<style>
+  /* Layout: 눈 내리는 겨울 낮 하늘 위에 하얀 카드가 한 줄로 이어지는 세로 흐름. 가운데 시세 전광판 띠가 포인트. */
+  :root {
+    color-scheme: light;
+    --sky: #e4f0f3;
+    --white: #ffffff;
+    --mint: #e9f4ee;
+    --mint-line: #cfe3d8;
+    --flake: #9fbccd;
+    /* 색 */
+    --pine-900: #0b231d;
+    --pine-800: #12352b;
+    --pine-700: #1a4a3b;
+    --pine-500: #2f7a5f;
+    --berry-700: #8e1b24;
+    --berry-600: #b3262e;
+    --berry-500: #d23c40;
+    --gold-700: #a87a2a;
+    --gold-500: #d9a84e;
+    --gold-300: #f1d495;
+    --ivory: #fff8ec;
+    --paper: #fffdf8;
+    --ink: #3a2a1e;
+    --ink-soft: #6b5646;
+    --line: #ecdcc0;
+    --on-dark: #f6ecd9;
+    --on-dark-soft: #b9c8bd;
+    --up: #e0353b;      /* 상승 = 빨강 (국내 증시 관례) */
+    --down: #2f6fd6;    /* 하락 = 파랑 */
+    --gold-line: rgba(241, 212, 149, 0.35);
+
+    /* 글꼴: 모두 굵기가 하나뿐인 둥근 글씨체 */
+    --f-display: "Jua", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    --f-body: "Gowun Dodum", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    --f-hand: "Gaegu", "Jua", cursive;
+
+    /* 모양 */
+    --radius-lg: 24px;
+    --radius-md: 16px;
+    --radius-sm: 12px;
+  }
+
+  /* ---------- 기본 ---------- */
+  *, *::before, *::after { box-sizing: border-box; }
+  body {
+    margin: 0;
+    color: var(--ink);
+    background:
+      radial-gradient(ellipse at 50% -10%, rgba(241, 212, 149, 0.45), transparent 55%),
+      linear-gradient(180deg, var(--sky) 0%, var(--ivory) 45%, #fbeedd 100%);
+    background-color: var(--ivory);
+    background-attachment: fixed;
+    font-family: var(--f-body);
+    font-size: 16px;
+    line-height: 1.7;
+    font-synthesis: none;   /* 가짜 굵게 방지 */
+    word-break: keep-all;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, p { margin: 0; font-weight: 400; }
+  h1, h2, h3 { font-family: var(--f-display); text-wrap: balance; }
+  b, strong { font-weight: 400; }
+  ul, ol { margin: 0; padding: 0; list-style: none; }
+  button { font: inherit; color: inherit; cursor: pointer; }
+  :focus-visible { outline: 2px solid var(--berry-500); outline-offset: 3px; border-radius: 6px; }
+
+  .up { color: var(--up); }
+  .down { color: var(--down); }
+  .label {
+    font-family: var(--f-display);
+    font-size: 13px;
+    letter-spacing: 0.12em;
+  }
+
+  #snow { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+
+  .wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 960px;
+    margin: 0 auto;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+
+  /* ---------- 히어로 ---------- */
+  .hero {
+    display: grid;
+    justify-items: center;
+    gap: 18px;
+    padding-block: clamp(48px, 9vw, 96px) clamp(32px, 6vw, 56px);
+    text-align: center;
+  }
+  .hero .eyebrow { color: var(--berry-600); letter-spacing: 0.2em; }
+  .hero .eyebrow i { font-style: normal; color: var(--gold-500); margin: 0 0.5em; }
+  .hero h1 {
+    font-size: clamp(52px, 14vw, 116px);
+    line-height: 1.02;
+    color: var(--pine-800);
+  }
+  .hero h1 i { font-style: normal; color: var(--berry-500); }
+  .hero .sub {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-family: var(--f-display);
+    font-size: clamp(24px, 5vw, 36px);
+    color: var(--berry-600);
+  }
+  .hero .sub::before, .hero .sub::after {
+    content: "";
+    width: clamp(24px, 6vw, 56px);
+    height: 1px;
+    background: var(--gold-500);
+    opacity: 0.6;
+  }
+  .hero .lede { max-width: 34em; color: var(--ink-soft); font-size: clamp(16px, 2.4vw, 18px); }
+
+  .facts { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 6px; }
+  .fact {
+    display: grid;
+    gap: 2px;
+    min-width: 0;
+    padding: 10px 18px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.8);
+    text-align: left;
+    box-shadow: 0 6px 16px rgba(58, 42, 30, 0.06);
+  }
+  .fact .label { font-size: 12px; color: var(--berry-600); }
+  .fact span { color: var(--ink); }
+  .fact .dday { font-family: var(--f-display); font-size: 20px; color: var(--berry-700); font-variant-numeric: tabular-nums; }
+
+  /* ---------- 시세 전광판 ---------- */
+  .ticker {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    border-block: 1px solid var(--line);
+    background: var(--white);
+  }
+  .ticker::before {
+    content: "";
+    display: block;
+    height: 8px;
+    background: repeating-linear-gradient(-45deg, var(--berry-600) 0 12px, var(--ivory) 12px 24px);
+  }
+  .ticker-row {
+    display: flex;
+    width: max-content;
+    padding-block: 14px;
+    animation: tick 48s linear infinite;
+  }
+  .ticker:hover .ticker-row { animation-play-state: paused; }
+  @keyframes tick { to { transform: translateX(-50%); } }
+  .tk {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 0 22px;
+    border-right: 1px solid var(--line);
+    font-family: var(--f-display);
+    font-size: 15px;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .tk .nm { font-size: 18px; color: var(--pine-800); }
+  .tk .px { color: var(--ink-soft); }
+  .ticker-note {
+    position: absolute;
+    right: max(12px, env(safe-area-inset-right, 0px));
+    bottom: 4px;
+    font-size: 11px;
+    color: var(--ink-soft);
+    opacity: 0.7;
+  }
+
+  /* ---------- 섹션 카드 ---------- */
+  main.wrap { display: grid; gap: clamp(20px, 4vw, 32px); padding-block: clamp(40px, 7vw, 72px); }
+  .sheet {
+    display: grid;
+    gap: 22px;
+    min-width: 0;
+    padding: clamp(24px, 5vw, 44px) clamp(18px, 4.5vw, 44px);
+    border: 2px solid var(--gold-300);
+    border-radius: var(--radius-lg);
+    background: var(--white);
+    color: var(--ink);
+    box-shadow: 0 0 0 6px rgba(217, 168, 78, 0.12), 0 18px 40px rgba(58, 42, 30, 0.10);
+  }
+  .sec-head { display: grid; gap: 8px; }
+  .sec-head.center { justify-items: center; text-align: center; }
+  .sec-head .label { color: var(--berry-600); letter-spacing: 0.18em; }
+  .sheet h2 { font-size: clamp(28px, 5vw, 38px); line-height: 1.25; color: var(--pine-800); }
+  .body { max-width: 40em; color: var(--ink-soft); font-size: 17px; }
+  .body strong { color: var(--ink); }
+  .hand { font-family: var(--f-hand); font-weight: 700; font-size: 1.15em; color: var(--berry-600); }
+  .fine { font-size: 13px; color: var(--ink-soft); }
+
+  /* 민트색 안쪽 카드 (연습 문제, 라인업) */
+  .dark-card {
+    display: grid;
+    gap: 10px;
+    padding: 18px 20px;
+    border: 1px solid var(--mint-line);
+    border-radius: var(--radius-md);
+    background: var(--mint);
+    color: var(--pine-800);
+  }
+  .dark-card .label { color: var(--pine-500); }
+
+  /* ---------- 게임 소개 ---------- */
+  .headline { font-family: var(--f-display); font-size: clamp(20px, 3.6vw, 24px); line-height: 1.4; }
+  .answer-box { font-size: 15px; color: var(--ink-soft); }
+  .answer-box summary {
+    display: inline-block;
+    padding: 4px 12px;
+    border: 1px dashed var(--pine-500);
+    border-radius: 999px;
+    background: var(--white);
+    color: var(--pine-700);
+    font-family: var(--f-display);
+    font-size: 14px;
+    list-style: none;
+    cursor: pointer;
+  }
+  .answer-box summary::-webkit-details-marker { display: none; }
+  .answer-box[open] summary { margin-bottom: 8px; }
+  .answer-box b { color: var(--berry-600); }
+
+  /* ---------- 감정 종목 ---------- */
+  .board-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 14px; }
+  .reroll {
+    padding: 9px 16px;
+    border: 1px solid var(--pine-700);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--pine-700);
+    font-family: var(--f-display);
+    font-size: 15px;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .reroll:hover { background: var(--pine-700); color: var(--gold-300); }
+  .board { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+  .stock {
+    display: grid;
+    gap: 4px;
+    min-width: 0;
+    padding: 14px 14px 12px;
+    border-radius: 14px;
+    color: #fff;
+  }
+  .stock.g { background: linear-gradient(180deg, var(--pine-500), var(--pine-700)); }
+  .stock.r { background: linear-gradient(180deg, var(--berry-500), var(--berry-700)); }
+  .stock .code { font-family: var(--f-display); font-size: 11px; letter-spacing: 0.14em; opacity: 0.75; }
+  .stock .name { font-family: var(--f-display); font-size: 24px; line-height: 1.2; }
+  .stock .rate {
+    justify-self: start;
+    margin-top: 4px;
+    padding: 2px 9px;
+    border-radius: 999px;
+    background: var(--paper);
+    font-family: var(--f-display);
+    font-size: 14px;
+    font-variant-numeric: tabular-nums;
+  }
+  .stock .rate.flash { animation: flash 0.5s ease; }
+  @keyframes flash { from { transform: scale(1.15); } to { transform: scale(1); } }
+
+  /* ---------- 라운드 흐름 ---------- */
+  .flow { display: grid; counter-reset: step; }
+  .flow li {
+    position: relative;
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr);
+    gap: 16px;
+    padding-bottom: 22px;
+    counter-increment: step;
+  }
+  .flow li:last-child { padding-bottom: 0; }
+  .flow li::before {
+    content: counter(step);
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--pine-700);
+    color: var(--gold-300);
+    font-family: var(--f-display);
+    font-size: 18px;
+    box-shadow: inset -3px -3px 0 rgba(0, 0, 0, 0.2), inset 3px 3px 0 rgba(255, 255, 255, 0.12);
+  }
+  .flow li:nth-child(even)::before { background: var(--berry-600); color: var(--ivory); }
+  .flow li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 21px;
+    top: 48px;
+    bottom: 4px;
+    width: 2px;
+    background: repeating-linear-gradient(180deg, var(--gold-500) 0 4px, transparent 4px 9px);
+  }
+  .flow h3 { padding-top: 8px; font-size: 20px; color: var(--pine-800); }
+  .flow p { color: var(--ink-soft); }
+  .rounds { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding-top: 6px; }
+  .orn {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    box-shadow: inset -3px -3px 0 rgba(0, 0, 0, 0.18), inset 3px 3px 0 rgba(255, 255, 255, 0.4);
+  }
+  .orn:nth-child(3n+1) { background: var(--berry-600); }
+  .orn:nth-child(3n+2) { background: var(--gold-500); }
+  .orn:nth-child(3n)   { background: var(--pine-500); }
+  .rounds .label { margin-left: 4px; color: var(--ink-soft); letter-spacing: 0; }
+
+  /* ---------- 투자왕 ---------- */
+  .podium {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: end;
+    gap: 10px;
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .step { display: grid; justify-items: center; gap: 6px; text-align: center; }
+  .step .medal { font-size: 30px; line-height: 1; }
+  .step .block {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    border-radius: var(--radius-sm) var(--radius-sm) 4px 4px;
+    color: var(--ivory);
+    font-family: var(--f-display);
+  }
+  .step.p1 .block { height: 128px; font-size: 30px; background: linear-gradient(180deg, var(--gold-500), var(--gold-700)); }
+  .step.p2 .block { height: 92px;  font-size: 24px; background: linear-gradient(180deg, var(--pine-500), var(--pine-700)); }
+  .step.p3 .block { height: 68px;  font-size: 22px; background: linear-gradient(180deg, var(--berry-500), var(--berry-700)); }
+  .step .who { font-size: 14px; color: var(--ink-soft); }
+  .crown { font-family: var(--f-display); font-size: clamp(22px, 4.5vw, 30px); text-align: center; color: var(--berry-700); }
+
+  /* ---------- 밴드 미사 ---------- */
+  .band-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    align-items: start;
+    gap: clamp(16px, 3vw, 28px);
+  }
+  .masses { display: grid; gap: 10px; }
+  .mass {
+    display: grid;
+    grid-template-columns: 72px minmax(0, 1fr);
+    align-items: center;
+    gap: 14px;
+    padding: 14px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    background: var(--paper);
+  }
+  .mass .day {
+    display: grid;
+    place-content: center;
+    height: 72px;
+    border-radius: 14px;
+    background: var(--berry-600);
+    color: var(--ivory);
+    font-family: var(--f-display);
+    line-height: 1.05;
+    text-align: center;
+  }
+  .mass:nth-child(2) .day { background: var(--pine-700); color: var(--gold-300); }
+  .mass .day small { font-size: 12px; opacity: 0.85; }
+  .mass .day span { font-size: 28px; }
+  .mass h3 { font-size: 20px; line-height: 1.3; color: var(--pine-800); }
+  .mass p { font-size: 15px; color: var(--ink-soft); }
+  .lineup { gap: 6px; padding-bottom: 14px; }
+  .lineup li {
+    display: grid;
+    grid-template-columns: 88px minmax(0, 1fr);
+    align-items: baseline;
+    gap: 12px;
+    padding: 9px 0;
+    border-bottom: 1px dashed var(--mint-line);
+  }
+  .lineup li:last-child { border-bottom: 0; }
+  .lineup .part { font-family: var(--f-display); font-size: 15px; color: var(--berry-600); }
+  .lineup .names { font-family: var(--f-display); font-size: 22px; }
+  .lineup .names i { font-style: normal; color: var(--gold-500); margin: 0 6px; }
+
+  /* ---------- 참가 안내 ---------- */
+  .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+  .info {
+    display: grid;
+    gap: 4px;
+    min-width: 0;
+    padding: 16px 18px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    background: var(--paper);
+  }
+  .info .label { font-size: 12px; color: var(--berry-600); }
+  .info span { font-size: 17px; color: var(--ink); }
+  .bring { display: grid; gap: 8px; }
+  .bring li { display: flex; gap: 10px; color: var(--ink-soft); }
+  .bring li::before { content: "✦"; flex: none; color: var(--gold-500); }
+
+  /* ---------- 푸터 ---------- */
+  footer.wrap {
+    display: grid;
+    justify-items: center;
+    gap: 10px;
+    padding-block: 8px clamp(48px, 8vw, 80px);
+    text-align: center;
+  }
+  footer .q { font-family: var(--f-display); font-size: clamp(22px, 4vw, 28px); color: var(--berry-600); }
+  footer .s { font-size: 14px; color: var(--ink-soft); }
+
+  /* ---------- 반응형 / 접근성 ---------- */
+  @media (max-width: 720px) {
+    .band-grid { grid-template-columns: minmax(0, 1fr); }
+    .board { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+  @media (max-width: 460px) {
+    .board { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .stock .name { font-size: 21px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ticker { overflow-x: auto; }
+    .ticker-row, .stock .rate.flash { animation: none; }
+    #snow { display: none; }
+  }
+</style>
+
+</head>
+<body>
+<canvas id="snow" aria-hidden="true"></canvas>
+
+<header class="wrap hero">
+  <p class="label eyebrow">신내동성당 중고등부 주일학교<i>✦</i>2026 성탄제</p>
+  <h1>신<i>(</i>내<i>)</i>의 한수</h1>
+  <p class="sub">감정 투자 대작전</p>
+  <p class="lede">헤드라인 한 줄만 보고 어떤 성경 이야기인지 맞혀 보세요. 그 이야기 속에서 오를 감정에 투자하는 팀 게임입니다. 10라운드 뒤 가장 큰 자산을 모은 팀이 2026 신내동 투자왕!</p>
+  <div class="facts">
+    <div class="fact"><b class="label">성탄제 게임</b><span data-event="gameDate"></span></div>
+    <div class="fact"><b class="label">밴드 미사</b><span>12.25 (금) 오후 3시 · 12.27 (일) 오전 10시</span></div>
+    <div class="fact"><b class="label">성탄제까지</b><span class="dday" id="dday">D-47</span></div>
+  </div>
+</header>
+
+<section class="ticker" aria-label="감정 시세 전광판 (예시)">
+  <div class="ticker-row" id="ticker"></div>
+  <span class="ticker-note">예시 시세</span>
+</section>
+
+<main class="wrap">
+
+  <section class="sheet" aria-labelledby="h-intro">
+    <div class="sec-head">
+      <p class="label">GAME</p>
+      <h2 id="h-intro">헤드라인 한 줄,<br>어떤 성경 이야기일까?</h2>
+    </div>
+    <p class="body">매 라운드 <strong>성경 이야기를 뉴스처럼 바꾼 헤드라인</strong>이 하나 공개됩니다. 팀원들과 머리를 맞대고 어떤 이야기인지 추리해 보세요. 이야기를 알아냈다면, 그 장면에서 <strong>어떤 감정이 오르고 내릴지</strong> 예측해 투자하면 됩니다.</p>
+    <p class="body">같은 감정이라도 이야기에 따라 크게 오르기도, 반토막이 나기도 해요. 성경을 잘 아는 팀이 유리하지만, <span class="hand">눈치와 배짱</span>도 무기입니다.</p>
+    <div class="dark-card">
+      <p class="label">연습 문제 · 오늘의 소식</p>
+      <p class="headline">"잔칫집 술독이 바닥났다. 하인들은 묵묵히 물을 길으러 갔다."</p>
+      <details class="answer-box">
+        <summary>정답 보기</summary>
+        <p><b>카나의 혼인 잔치</b> (요한 2,1-11). 예수님이 물을 포도주로 바꾸신 첫 표징이에요. 이런 이야기라면 <b>희망</b>과 <b>믿음</b>이 오르지 않을까요? 실제 게임 문제는 당일 공개!</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="sheet" aria-labelledby="h-board">
+    <div class="board-head">
+      <div class="sec-head">
+        <p class="label">LISTING</p>
+        <h2 id="h-board">상장 종목 12개 감정</h2>
+      </div>
+      <button class="reroll" id="reroll" type="button">↻ 시세 미리보기</button>
+    </div>
+    <div class="board" id="board"></div>
+    <p class="fine">버튼을 누를 때마다 바뀌는 등락률은 재미로 보는 예시입니다. 실제 등락은 성탄제 당일, 이야기가 정합니다. <span class="up">빨강은 상승</span>, <span class="down">파랑은 하락</span>입니다.</p>
+  </section>
+
+  <section class="sheet" aria-labelledby="h-flow">
+    <div class="sec-head">
+      <p class="label">ROUND</p>
+      <h2 id="h-flow">한 라운드는 이렇게 흘러갑니다</h2>
+    </div>
+    <ol class="flow">
+      <li><div><h3>헤드라인 공개</h3><p>성경 이야기를 비튼 헤드라인 한 줄이 뜹니다. 단서는 이것뿐이에요.</p></div></li>
+      <li><div><h3>팀별 회의</h3><p>어떤 성경 이야기일까? 그 장면에서 어떤 감정이 오를까? 정보 코인을 쓸지도 함께 정하세요.</p></div></li>
+      <li><div><h3>감정별 투자</h3><p>보유 자산 안에서 감정마다 투자 금액을 나눠 겁니다. 투자하지 않은 돈은 다음 라운드로 그대로 이어져요.</p></div></li>
+      <li><div><h3>수익률 확인</h3><p>감정별 등락률이 공개되고 팀별 수익이 정산됩니다.</p></div></li>
+      <li><div>
+        <h3>다음 라운드로</h3>
+        <p>10라운드를 마치면 최종 순위를 발표합니다.</p>
+        <div class="rounds" aria-label="총 10라운드">
+          <span class="orn"></span><span class="orn"></span><span class="orn"></span><span class="orn"></span><span class="orn"></span>
+          <span class="orn"></span><span class="orn"></span><span class="orn"></span><span class="orn"></span><span class="orn"></span>
+          <span class="label">× 10라운드</span>
+        </div>
+      </div></li>
+    </ol>
+  </section>
+
+  <section class="sheet" aria-labelledby="h-king">
+    <div class="sec-head center">
+      <p class="label">AWARD</p>
+      <h2 id="h-king">2026 신내동 투자왕을 찾습니다</h2>
+    </div>
+    <div class="podium" aria-label="최종 순위 시상대">
+      <div class="step p2"><span class="medal" aria-hidden="true">🥈</span><div class="block">2위</div><span class="who">?? 팀</span></div>
+      <div class="step p1"><span class="medal" aria-hidden="true">🥇</span><div class="block">1위</div><span class="who">?? 팀</span></div>
+      <div class="step p3"><span class="medal" aria-hidden="true">🥉</span><div class="block">3위</div><span class="who">?? 팀</span></div>
+    </div>
+    <p class="crown">올해의 한 수는 누구의 것일까요?</p>
+  </section>
+
+  <section class="sheet" aria-labelledby="h-band">
+    <div class="sec-head">
+      <p class="label">BAND MASS</p>
+      <h2 id="h-band">올해 성탄 미사는 밴드와 함께</h2>
+      <p class="body">중고등부 밴드가 성가를 맡아 두 번의 성탄 미사를 함께 드립니다.</p>
+    </div>
+    <div class="band-grid">
+      <div class="masses">
+        <div class="mass">
+          <div class="day"><small>12월</small><span>25</span><small>금</small></div>
+          <div><h3>초중고 합동 성탄 미사</h3><p>오후 3시 · 신내동성당</p></div>
+        </div>
+        <div class="mass">
+          <div class="day"><small>12월</small><span>27</span><small>일</small></div>
+          <div><h3>중고등부 성탄 미사</h3><p>오전 10시 · 신내동성당</p></div>
+        </div>
+      </div>
+      <div class="dark-card lineup" aria-label="밴드 구성">
+        <p class="label">LINE-UP</p>
+        <ul>
+          <li><span class="part">보컬</span><span class="names">송민준<i>·</i>이사랑</span></li>
+          <li><span class="part">기타</span><span class="names">송문권</span></li>
+          <li><span class="part">키보드</span><span class="names">김해율</span></li>
+          <li><span class="part">드럼</span><span class="names">박재인</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sheet" aria-labelledby="h-info">
+    <div class="sec-head">
+      <p class="label">INFO</p>
+      <h2 id="h-info">참가 안내</h2>
+    </div>
+    <div class="info-grid">
+      <div class="info"><b class="label">대상</b><span>신내동성당 중고등부 학생 누구나</span></div>
+      <div class="info"><b class="label">성탄제 일시</b><span data-event="gameDate"></span></div>
+      <div class="info"><b class="label">문의</b><span>중고등부 주일학교 교사회</span></div>
+    </div>
+    <ul class="bring">
+      <li>성경 이야기를 미리 한 번 훑어 오면 한 수가 쉬워져요.</li>
+      <li>필요한 건 추리력과 배짱, 그리고 성탄을 기다리는 마음입니다.</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <p class="q">올해 당신의 한 수는 어떤 감정인가요?</p>
+  <p class="s">Merry Christmas &amp; Happy Investing · 신내동성당 중고등부 주일학교</p>
+</footer>
+
+<script>
+  // ── 행사 정보: 일정이 바뀌면 여기만 고치세요 ──
+  const EVENT = {
+    gameDate: "12.27 (일) 오전 10시",
+    festival: new Date(2026, 11, 27),   // 성탄제 날짜 (월은 0부터: 11 = 12월)
+  };
+
+  // ── 감정 12종: [이름, 색(g=초록, r=빨강), 종목 코드] ──
+  const EMOTIONS = [
+    ["탐욕", "g", "GRD"], ["사랑", "r", "LUV"], ["질투", "g", "ENV"], ["믿음", "r", "FTH"],
+    ["분노", "g", "RGE"], ["용기", "r", "CRG"], ["나태", "g", "SLT"], ["희망", "r", "HOP"],
+    ["슬픔", "g", "SRW"], ["절제", "r", "TMP"], ["두려움", "g", "FER"], ["화합", "r", "UNI"],
+  ];
+
+  const randomRate = () => Math.round((Math.random() - 0.45) * 800) / 10 || 1.2;
+  const formatRate = (r) => `${r > 0 ? "▲" : "▼"} ${Math.abs(r).toFixed(1)}%`;
+  const trend = (r) => (r > 0 ? "up" : "down");
+
+  // 행사 일시 채우기
+  document.querySelectorAll("[data-event]").forEach((el) => {
+    el.textContent = EVENT[el.dataset.event];
+  });
+
+  // 성탄제 D-day: 오늘 날짜 기준으로 매일 줄어들고, 페이지를 열어 둔 채 자정이 지나도 갱신
+  const updateDday = () => {
+    const now = new Date();
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const d = Math.round((EVENT.festival - today) / 86400000);
+    document.getElementById("dday").textContent =
+      d > 0 ? `D-${d}` : d === 0 ? "D-DAY 오늘이에요!" : "함께해 주셔서 감사해요";
+    const nextMidnight = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 1);
+    setTimeout(updateDday, nextMidnight - now + 1000);
+  };
+  updateDday();
+
+  // 시세 전광판 (끊김 없이 흐르도록 같은 목록을 두 번 붙임)
+  {
+    const items = EMOTIONS.map(([name]) => {
+      const r = randomRate();
+      const price = (Math.round((10000 * (1 + r / 100)) / 10) * 10).toLocaleString("ko-KR");
+      return `<span class="tk"><span class="nm">${name}</span><span class="px">${price}</span><span class="${trend(r)}">${formatRate(r)}</span></span>`;
+    }).join("");
+    const row = document.getElementById("ticker");
+    row.innerHTML = items + items.replaceAll('<span class="tk">', '<span class="tk" aria-hidden="true">');
+  }
+
+  // 종목 보드
+  {
+    const board = document.getElementById("board");
+    board.innerHTML = EMOTIONS.map(([name, tone, code]) =>
+      `<div class="stock ${tone}"><span class="code">${code}</span><span class="name">${name}</span><span class="rate"></span></div>`
+    ).join("");
+
+    const reroll = () => {
+      board.querySelectorAll(".rate").forEach((el) => {
+        const r = randomRate();
+        el.textContent = formatRate(r);
+        el.className = `rate ${trend(r)}`;
+        void el.offsetWidth;          // 애니메이션 다시 시작
+        el.classList.add("flash");
+      });
+    };
+    reroll();
+    document.getElementById("reroll").addEventListener("click", reroll);
+  }
+
+  // 눈 내리기
+  if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const canvas = document.getElementById("snow");
+    const ctx = canvas.getContext("2d");
+    let w = 0, h = 0;
+    // 밝은 배경에서도 보이도록 옅은 하늘색 눈송이
+    const flakeColor = getComputedStyle(document.documentElement).getPropertyValue("--flake").trim() || "#9fbccd";
+
+    const resize = () => {
+      const dpr = Math.min(devicePixelRatio || 1, 2);
+      w = canvas.clientWidth;
+      h = canvas.clientHeight;
+      canvas.width = w * dpr;
+      canvas.height = h * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
+    resize();
+    addEventListener("resize", resize);
+
+    const flakes = Array.from({ length: Math.min(70, Math.round(w / 18)) }, () => ({
+      x: Math.random() * w,
+      y: Math.random() * h,
+      r: 1.4 + Math.random() * 2.8,
+      vy: 0.3 + Math.random() * 0.8,
+      vx: (Math.random() - 0.5) * 0.4,
+      a: 0.35 + Math.random() * 0.5,
+      phase: Math.random() * Math.PI * 2,
+    }));
+
+    const frame = (t) => {
+      ctx.clearRect(0, 0, w, h);
+      ctx.fillStyle = flakeColor;   // 크기 조정 시 캔버스 상태가 초기화되므로 매 프레임 지정
+      for (const f of flakes) {
+        f.y += f.vy;
+        f.x += f.vx + Math.sin(t / 1600 + f.phase) * 0.25;
+        if (f.y > h + 5) { f.y = -5; f.x = Math.random() * w; }
+        if (f.x > w + 5) f.x = -5;
+        else if (f.x < -5) f.x = w + 5;
+        ctx.globalAlpha = f.a;
+        ctx.beginPath();
+        ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      requestAnimationFrame(frame);
+    };
+    requestAnimationFrame(frame);
+  }
+</script>
+</body>
+</html>
