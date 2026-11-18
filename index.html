@@ -517,8 +517,11 @@
   @media (max-width: 460px) {
     .facts { display: grid; grid-template-columns: minmax(0, 1fr) auto; width: 100%; }
     .fact:nth-child(2) { grid-column: 1 / -1; order: 3; }
-    .board { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .stock .name { font-size: 21px; }
+    .board { gap: 8px; }
+    .stock { padding: 10px 8px 9px; gap: 2px; border-radius: 12px; }
+    .stock .code { font-size: 10px; letter-spacing: 0.08em; }
+    .stock .name { font-size: 19px; }
+    .stock .rate { margin-top: 2px; padding: 1px 6px; font-size: 12px; }
   }
   @media (prefers-reduced-motion: reduce) {
     .ticker { overflow-x: auto; }
@@ -640,7 +643,8 @@
         <ul>
           <li><span class="part">보컬</span><span class="names">송민준<i>·</i>이사랑</span></li>
           <li><span class="part">기타</span><span class="names">송문권</span></li>
-          <li><span class="part">키보드</span><span class="names">김해율</span></li>
+          <li><span class="part">키보드</span><span class="names">백하은</span></li>
+          <li><span class="part">베이스</span><span class="names">김민서</span></li>
           <li><span class="part">드럼</span><span class="names">박재인</span></li>
         </ul>
       </div>
