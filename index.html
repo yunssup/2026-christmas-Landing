@@ -201,7 +201,7 @@
   .hand { color: var(--berry-600); }
   .fine { font-size: 13px; color: var(--ink-soft); }
 
-  /* 민트색 안쪽 카드 (연습 문제, 라인업) */
+  /* 민트색 안쪽 카드 (연습 문제) */
   .dark-card {
     display: grid;
     gap: 10px;
@@ -347,54 +347,6 @@
   .step .who { font-size: 14px; color: var(--ink-soft); }
   .crown { font-family: var(--f-display); font-size: clamp(22px, 4.5vw, 30px); text-align: center; color: var(--berry-700); }
 
-  /* ---------- 밴드 미사 ---------- */
-  .band-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
-    align-items: start;
-    gap: clamp(16px, 3vw, 28px);
-  }
-  .masses { display: grid; gap: 10px; }
-  .mass {
-    display: grid;
-    grid-template-columns: 72px minmax(0, 1fr);
-    align-items: center;
-    gap: 14px;
-    padding: 14px;
-    border: 1px solid var(--line);
-    border-radius: var(--radius-md);
-    background: var(--paper);
-  }
-  .mass .day {
-    display: grid;
-    place-content: center;
-    height: 72px;
-    border-radius: 14px;
-    background: var(--berry-600);
-    color: var(--ivory);
-    font-family: var(--f-display);
-    line-height: 1.05;
-    text-align: center;
-  }
-  .mass:nth-child(2) .day { background: var(--pine-700); color: var(--gold-300); }
-  .mass .day small { font-size: 12px; opacity: 0.85; }
-  .mass .day span { font-size: 28px; }
-  .mass h3 { font-size: 20px; line-height: 1.3; color: var(--pine-800); }
-  .mass p { font-size: 15px; color: var(--ink-soft); }
-  .lineup { gap: 6px; padding-bottom: 14px; }
-  .lineup li {
-    display: grid;
-    grid-template-columns: 88px minmax(0, 1fr);
-    align-items: baseline;
-    gap: 12px;
-    padding: 9px 0;
-    border-bottom: 1px dashed var(--mint-line);
-  }
-  .lineup li:last-child { border-bottom: 0; }
-  .lineup .part { font-family: var(--f-display); font-size: 15px; color: var(--berry-600); }
-  .lineup .names { font-family: var(--f-display); font-size: 22px; }
-  .lineup .names i { font-style: normal; color: var(--gold-500); margin: 0 6px; }
-
   /* ---------- 참가 안내 ---------- */
   .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 12px; }
   .info {
@@ -511,7 +463,6 @@
 
   /* ---------- 반응형 / 접근성 ---------- */
   @media (max-width: 720px) {
-    .band-grid { grid-template-columns: minmax(0, 1fr); }
     .board { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   }
   @media (max-width: 460px) {
@@ -544,7 +495,6 @@
   <p class="lede">헤드라인 한 줄만 보고 어떤 성경 이야기인지 맞혀 보세요. 그 이야기 속에서 오를 감정에 투자하는 팀 게임입니다. 10라운드 뒤 가장 큰 자산을 모은 팀이 2026 신내동 투자왕!</p>
   <div class="facts">
     <div class="fact"><b class="label">성탄제 일정</b><span data-event="gameDate"></span></div>
-    <div class="fact"><b class="label">밴드 미사</b><span>12.20 (일) 오전 10시 · 12.25 (금) 오후 3시</span></div>
     <div class="fact"><b class="label">성탄제까지</b><span class="dday" id="dday">D-47</span></div>
   </div>
 </header>
@@ -619,36 +569,6 @@
       <div class="step p3"><span class="medal" aria-hidden="true">🥉</span><div class="block">3위</div><span class="who">?? 팀</span></div>
     </div>
     <p class="crown">올해의 한 수는 누구의 것일까요?</p>
-  </section>
-
-  <section class="sheet" aria-labelledby="h-band">
-    <div class="sec-head">
-      <p class="label">BAND MASS</p>
-      <h2 id="h-band">올해 성탄 미사는 밴드와 함께</h2>
-      <p class="body">중고등부 밴드가 성가를 맡아 두 번의 성탄 미사를 함께 드립니다.</p>
-    </div>
-    <div class="band-grid">
-      <div class="masses">
-        <div class="mass">
-          <div class="day"><small>12월</small><span>20</span><small>일</small></div>
-          <div><h3>중고등부 성탄 미사</h3><p>오전 10시 · 신내동성당</p></div>
-        </div>
-        <div class="mass">
-          <div class="day"><small>12월</small><span>25</span><small>금</small></div>
-          <div><h3>초중고 합동 성탄 미사</h3><p>오후 3시 · 신내동성당</p></div>
-        </div>
-      </div>
-      <div class="dark-card lineup" aria-label="밴드 구성">
-        <p class="label">LINE-UP</p>
-        <ul>
-          <li><span class="part">보컬</span><span class="names">송민준<i>·</i>이사랑</span></li>
-          <li><span class="part">기타</span><span class="names">송문권</span></li>
-          <li><span class="part">키보드</span><span class="names">백하은</span></li>
-          <li><span class="part">베이스</span><span class="names">김민서</span></li>
-          <li><span class="part">드럼</span><span class="names">박재인</span></li>
-        </ul>
-      </div>
-    </div>
   </section>
 
   <section class="sheet" aria-labelledby="h-info">
